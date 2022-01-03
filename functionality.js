@@ -14,3 +14,5 @@ setInterval(() => {
 
     document.getElementById('secondHand').style.transform=`rotate(-90deg) rotate(${(currTime.getSeconds()/60)*360}deg) translateX(50%)`;
 }, 1000);
+
+// END
