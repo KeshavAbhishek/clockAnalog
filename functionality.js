@@ -1,11 +1,13 @@
 setInterval(() => {
     var currTime = new Date()
+    currentTicks = Math.floor(currTime.getMinutes()/12);
+    console.log(currentTicks)
     if(currTime.getHours()>12){
-        document.getElementById('hourHand').style.transform=`rotate(-90deg) rotate(${(((currTime.getHours()-12)/12)*360)+(currTime.getMinutes()/60)*30}deg) translateX(50%)`;
+        document.getElementById('hourHand').style.transform=`rotate(-90deg) rotate(${(((currTime.getHours()-12)/12)*360)+(currentTicks)*6}deg) translateX(50%)`;
         document.getElementById('hourHand').style.transition='all 1s ease-in-out';
     }
     else{
-        document.getElementById('hourHand').style.transform=`rotate(-90deg) rotate(${((currTime.getHours()/12)*360)+(currTime.getMinutes()/60)*30}deg) translateX(50%)`;
+        document.getElementById('hourHand').style.transform=`rotate(-90deg) rotate(${((currTime.getHours()/12)*360)+(currentTicks)*6}deg) translateX(50%)`;
         document.getElementById('hourHand').style.transition='all 1s ease-in-out';
     }
 
